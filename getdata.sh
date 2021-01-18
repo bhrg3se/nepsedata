@@ -12,5 +12,5 @@ nepse_index=$(curl https://newweb.nepalstock.com.np/api/nots/nepse-index)
 floorsheet=$(curl "https://newweb.nepalstock.com.np/api/nots/nepse-data/floorsheet?&sort=contractId,desc")
 trading_average=$(curl https://newweb.nepalstock.com.np/api/nots/nepse-data/trading-average?nDays=120)
 
-echo "$trade_qty"
+mkdir -p data
 echo "{\"trade_qty\":$trade_qty,\"supplydemand\":$supplydemand,\"market_summary\":$market_summary,\"turnover\":$turnover,\"top_gainer\":$top_gainer,\"nepse_index\":$nepse_index,\"floorsheet\":$floorsheet,\"trading_average\":$trading_average}" > data/$DATE.json
